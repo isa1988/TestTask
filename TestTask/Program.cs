@@ -21,7 +21,10 @@ namespace TestTask
             Console.WriteLine("Задание 2");
             IDataEncoder encoder = null;
             Console.WriteLine("Вы хотите зашифровать пароль в SHA1? Д/Н");
-            line = Console.ReadLine();
+            do
+            {
+                line = Console.ReadLine();
+            } while (line.ToUpper() != "Д" && line.ToUpper() != "Н");
             if (line.ToUpper() == "Н") encoder = new TestTaskData.DataModal.Encoder();
             else encoder = new EncoderSpecial();
             Console.WriteLine("Введите строку для шифрования");
